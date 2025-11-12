@@ -1,0 +1,43 @@
+# Virtual environment
+venv/
+.env/
+ENV/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Build / distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE / editor configs
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
+# Test / coverage / debug files
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+
+# System-specific
+Thumbs.db
+desktop.ini
+
+# Local config / secrets
+config.local.py
+.env.local
