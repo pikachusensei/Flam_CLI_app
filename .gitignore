@@ -1,43 +1,86 @@
-# Virtual environment
+# ------------------------------
+# Virtual environments
+# ------------------------------
 venv/
 .env/
 ENV/
 env/
 
-# Python cache and compiled files
+# ------------------------------
+# Python cache / compiled files
+# ------------------------------
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.pdb
 
-# Build / distribution / packaging
+# ------------------------------
+# Build / Distribution / Packaging
+# ------------------------------
 build/
 dist/
 *.egg-info/
 .eggs/
+*.whl
 
-# IDE / editor configs
-.vscode/
-.idea/
+# ------------------------------
+# Installed editable package artifact
+# (created after `pip install -e .`)
+# ------------------------------
+queuectl.egg-info/
+flam.egg-info/
 
-# Logs and temp files
+# ------------------------------
+# Databases (local runtime data)
+# ------------------------------
+*.db
+queue.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------
+# Log files and temp
+# ------------------------------
 *.log
 *.tmp
 *.bak
 *.swp
+
+# ------------------------------
+# OS / System files
+# ------------------------------
 *.DS_Store
-
-# Test / coverage / debug files
-.coverage
-.tox/
-.nox/
-.pytest_cache/
-
-# System-specific
 Thumbs.db
 desktop.ini
 
-# Local config / secrets
+# ------------------------------
+# IDE / Editor configs
+# ------------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# ------------------------------
+# Test / Coverage / Debug
+# ------------------------------
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# ------------------------------
+# Secrets / Local overrides
+# ------------------------------
 config.local.py
+.env
 .env.local
+*.secret
+*.key
+
+# ------------------------------
+# Uvicorn reload artifacts
+# ------------------------------
+*.pid
+.reload/

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "queuectl"
+version = "0.0.1"
+description = "CLI-based background job queue system"
+authors = [{ name = "Shreyansh Singh" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.9",
+    "fastapi>=0.110",
+    "uvicorn>=0.25",
+]
+
+[tool.setuptools.packages.find]
+where = ["flam"]
+
+[project.scripts]
+queuectl = "flam.cli:app"

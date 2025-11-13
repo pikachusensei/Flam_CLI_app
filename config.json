@@ -1,0 +1,7 @@
+{
+    "max_retries": 4,
+    "base_backoff": 2,
+    "default_timeout": 30,
+    "poll_interval": 1,
+    "priority_default": 0
+}
