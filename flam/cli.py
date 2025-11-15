@@ -197,14 +197,19 @@ def list_jobs(state: str = typer.Option("pending")):
 
     typer.echo(f"\nJobs in state '{state}':")
     for r in rows:
+        next_run = r["next_run_at"] if "next_run_at" in r.keys() else None
+    
         msg = (
             f"{r['id']} | {r['command']} "
             f"| attempts={r['attempts']}/{r['max_retries']} "
-            f"| run_at={r['next_run_at'] or 'ASAP'}"
+            f"| run_at={next_run or 'ASAP'}"
         )
+    
         if r["last_error"]:
             msg += f" | error={r['last_error'][:60]}"
+    
         typer.echo(msg)
+
 
 # ============================================================
 # DLQ

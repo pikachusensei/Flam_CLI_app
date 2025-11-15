@@ -1,0 +1,27 @@
+queuectl init
+
+queuectl enqueue "echo hello world"
+queuectl enqueue "invalid_command_abc"
+queuectl enqueue "echo high priority" --priority 10
+queuectl enqueue "echo run later" --delay 5
+
+
+queuectl worker-start --count 1
+
+queuectl worker-stop
+
+
+queuectl list --state pending
+queuectl list --state completed
+queuectl dlq list
+
+
+queuectl logs <job_id>
+
+
+queuectl metrics
+
+
+queuectl dashboard
+
+//Thank you..
